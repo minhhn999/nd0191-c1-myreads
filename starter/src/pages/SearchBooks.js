@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import * as booksAPI from "../BooksAPI";
 import BookShelf from "../components/BookShelf";
 import { SELFS } from "../utils/constants";
+import debounce from "lodash/debounce";
 
 const SearchBooks = ({ shelfBooks, onChangeBookShelf }) => {
   const [searchedBooks, setSearchedBook] = useState([]);
@@ -30,12 +31,12 @@ const SearchBooks = ({ shelfBooks, onChangeBookShelf }) => {
         }
       };
       search();
-    }
+    } else setSearchedBook([]);
   }, [query, shelfBooks]);
-  const handleChangeQuery = (event) => {
+  const handleChangeQuery = debounce(async (event) => {
     // console.log("changed", event.target.value);
     setQuery(event.target.value);
-  };
+  }, 500);
 
   const handleChange = async (shelf, book) => {
     await booksAPI.update(book, shelf);

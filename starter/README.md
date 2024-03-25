@@ -31,12 +31,12 @@ To get started developing right away:
     ├── index.css # Global styles. You probably won't need to change anything here.
     └── index.js # is used for DOM rendering only.
     └── pages # folder contain all screen of project
-    │   ├── MyReads.jsx # Screen MyReads contains 3 partitions: currently reading, want to read and read.
-    │   ├── SearchBooks.jsx # Screen Search Books contains HTML for search and search results 
-    │   └── PageNotFound.jsx # Screen Page Not Found when input incorrect URL.
+    │   ├── MyReads.js # Screen MyReads contains 3 partitions: currently reading, want to read and read.
+    │   ├── SearchBooks.js # Screen Search Books contains HTML for search and search results 
+    │   └── PageNotFound.js # Screen Page Not Found when input incorrect URL.
     └── components # folder contain all shared components which are used in each screen
-    │   ├── BookShelf.jsx # Component BookShelf is used in MyRead and SearchBooks Screens
-    │   ├── Header.jsx # Component Header in MyRead Screen
+    │   ├── BookShelf.js # Component BookShelf is used in MyRead and SearchBooks Screens
+    │   ├── Header.js # Component Header in MyRead Screen
 ```
 
 Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.

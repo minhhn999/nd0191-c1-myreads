@@ -30,7 +30,7 @@ const BookShelf = ({ title, books, onChangeBookShelf }) => {
                       value={book.shelf}
                       onChange={(e) => handleChange(e, book)}
                     >
-                      <option value="none" disabled>
+                      <option value="_" disabled>
                         Move to...
                       </option>
                       <option value="currentlyReading">
