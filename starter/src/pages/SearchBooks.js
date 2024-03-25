@@ -11,8 +11,8 @@ const SearchBooks = ({ shelfBooks, onChangeBookShelf }) => {
   const [error, setError] = useState(null);
   const [query, setQuery] = useState("");
   useEffect(() => {
+    setError(null);
     if (query) {
-      setError(null);
       const search = async () => {
         const response = await booksAPI.search(query, 10);
         if (response.error) {
@@ -31,7 +31,9 @@ const SearchBooks = ({ shelfBooks, onChangeBookShelf }) => {
         }
       };
       search();
-    } else setSearchedBook([]);
+    } else {
+      setSearchedBook([]);
+    }
   }, [query, shelfBooks]);
   const handleChangeQuery = debounce(async (event) => {
     // console.log("changed", event.target.value);
